@@ -1,0 +1,180 @@
+<!-- Bootstrap 5 Starter template -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/2767c807ad.js" crossorigin="anonymous"></script>
+    <!-- custom css -->
+    <link rel="stylesheet" href="style.css">
+    <title>Tasty Hut</title>
+</head>
+
+<body>
+    <!-- navbar -->
+    <section class="nav">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light container-fluid">
+            <div class="container-fluid p-3">
+                <a class="navbar-brand" href="#"><img src="./images/Tasty_HUT.png" alt="" srcset=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    </ul>
+                    <form class="d-flex">
+                        <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+                        <button class="btn btn-warning " type="submit">Signup</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </section>
+    <!-- banner section -->
+    <section>
+        <div class="p-5 text-center bg-image container-fluid ">
+            <div class="mask">
+                <div class="d-flex justify-content-center align-items-center ">
+                    <div class="w-75">
+                        <h1 class="mb-3 text-white ">Taste Our Delicious <br> Best Foods</h1>
+                        <h4 class="mb-3 p-2 text-white fs-5" id="tagline">
+                            There are many variations of passages of Lorem Ipsum available, but the majority have
+                            suffered alteration in some form,
+                            by injected humou.
+                        </h4>
+                        <!-- search field -->
+                        <section class="mt-5">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div class="form-group mx-sm-3 w-50">
+                                    <input type="text" class="form-control" id="search-field"
+                                        placeholder="Search any food">
+                                </div>
+                                <button onclick="searchMeals()" class="btn btn-warning ">Search</button>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="text-center mt-5">
+        <h2 class="text-dark fw-bold">
+            Your Favourite Food
+            <hr class="w-25 mx-auto ">
+        </h2>
+    </div>
+    <!-- spinner -->
+    <section id="loader" class="d-none">
+        <div style="height: 300px;" class="d-flex justify-content-center align-items-center">
+            <div class="spinner-border text-warning" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </section>
+    <!-- food item -->
+    <section id="container" class="m-5 p-5">
+        <div id="meals-container" class="row row-cols-1 row-cols-md-2 g-4">
+
+        </div>
+    </section>
+
+    <!-- no phone found message -->
+    <section>
+        <div id="not-found" class="mt-5 d-none">
+            <h3 class="text-warning text-center">
+                <i class="fa-solid fa-triangle-exclamation">
+                    
+                </i> 
+                Please try a new search...
+            </h3>
+        </div>
+    </section>
+
+    <!-- modal -->
+    <section>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div id="modalSection" class="modal-content">
+
+                </div>
+            </div>
+    </section>
+
+    <!-- show more -->
+    <div id="show-more" class="text-center my-5 d-none">
+        <button onclick="showAllMeal()" type="button" class="btn btn-warning">Show more</button>
+    </div>
+
+    <!-- footer -->
+    <section>
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-4 col-xs-12">
+                        <div class="single_footer">
+                            <h4>Services</h4>
+                            <ul>
+                                <li><a href="#">Lorem Ipsum</a></li>
+                                <li><a href="#">Simply dummy text</a></li>
+                                <li><a href="#">The printing and typesetting </a></li>
+                                <li><a href="#">Standard dummy text</a></li>
+                                <li><a href="#">Type specimen book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="single_footer single_footer_address">
+                            <h4>Page Link</h4>
+                            <ul>
+                                <li><a href="#">Lorem Ipsum</a></li>
+                                <li><a href="#">Simply dummy text</a></li>
+                                <li><a href="#">The printing and typesetting </a></li>
+                                <li><a href="#">Standard dummy text</a></li>
+                                <li><a href="#">Type specimen book</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="single_footer single_footer_address">
+                            <h4>Subscribe today</h4>
+                            <div class="signup_form">
+                                <form action="#" class="subscribe">
+                                    <input type="text" class="subscribe__input" placeholder="Enter Email Address">
+                                    <button type="button" class="subscribe__btn"><i
+                                            class="fas fa-paper-plane"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="social_profile">
+                            <ul>
+                                <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                                <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-sm-12 col-xs-12">
+                        <p class="copyright">Copyright © 2023 <a href="#">Tasty Hut</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- bootstarap script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- js -->
+    <script src="script.js"></script>
+</body>
+
+</html>
